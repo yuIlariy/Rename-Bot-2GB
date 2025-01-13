@@ -1,5 +1,5 @@
 <h1 align="center">
- <b><a href="https://youtu.be/kuW1DwrHC1M" target="/blank">Post Search Bot</a>
+ <b><a href="https://youtu.be/kuW1DwrHC1M" target="/blank">Rename Bot 2GB</a>
 </h1>
 
 <p align="center">🩷 Thanks for Being Here 🩷</p>
@@ -10,13 +10,18 @@
 
 <details><summary>Tap On Me For Bot Features</summary>
 
-- Connect multiple channel
-- Set fsub
-- No telegram message length limit
+- Renames very fast .
+- Permanent Thumbnail support.
+- Force join for the user for use.
+- Supports Broadcasts.
+- Set custom caption.
+- Has a custom Start-up pic.
+- Force subscribe available.
+- Supports ulimited renaming at a time.
 - Auto delete 
 - Fully modified repo
 - Deploy To Koyeb + Heroku + Railway.
-- [Developer support](https://telegram.me/CodeXSupport) 24x7
+- [Developer support](https://telegram.me/TechifySupport) 24x7
 </details>
 
 
