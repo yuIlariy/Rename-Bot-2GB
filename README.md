@@ -46,7 +46,6 @@
 
 <details><summary>Tap On Me For Commands</summary>
 ```
-
 start - Check if the bot is running.
 viewthumb - To view current thumbnail.
 delthumb - To delete current thumbnail.
@@ -65,7 +64,6 @@ del_suffix - Delete Your Suffix
 restart - To restart the bot [FOR ADMINS USE ONLY]
 broadcast - Message Broadcast command [FOR ADMINS USE ONLY].
 status - Check bot status [FOR ADMINS USE ONLY].
-
 ```
 </details>
 
