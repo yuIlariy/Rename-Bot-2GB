@@ -45,6 +45,7 @@
 ### 😍 COMMANDS
 
 <details><summary>Tap On Me For Commands</summary>
+
 ```
 start - Check if the bot is running.
 viewthumb - To view current thumbnail.
