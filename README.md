@@ -33,77 +33,56 @@
 * `API_HASH` - Your Telegram [API HASH](https://youtu.be/RdMY6Lqfi9w).
 * `BOT_TOKEN` - Get it from [BotFather](https://youtu.be/aJILCCXfNVM).
 * `ADMIN` - Your ID
-* `DATABASE_URI` - Enter Mongodb [database URL](https://youtu.be/pMJpHoiu1go)
-* `CHANNEL` - Force subscribe channel username without `@`
+* `DB_URL` - Enter Mongodb [database URL](https://youtu.be/pMJpHoiu1go)
+* `FORCE_SUB` - Force subscribe channel username without `@`
 * `LOG_CHANNEL` - Log Channel ID.
-* `SESSION` - Pyrogram String Session.
+* `DB_NAME`  - Your database name from mongoDB.
+* `START_PIC` - Start message photo.
+* `BIN_CHANNEL` - Bin channel ID.
 </details>
-</b>
+
 
 ### 😍 COMMANDS
 
-<b><details><summary>Tap On Me For Commands</summary>
+<details><summary>Tap On Me For Commands</summary>
 ```
-start - Check If I'm Alive or Not!
-id - Get Channel/Group Id
-verify - Send in group & wait for It To Accept
-connect - Link Database Channel/Group to search from
-disconnect - Disconnect Database
-fsub - Add a Force Subscribe Channel
-connections - Get connected channels list
+start - Check if the bot is running.
+viewthumb - To view current thumbnail.
+delthumb - To delete current thumbnail.
+set_caption - set a custom caption.
+see_caption - see your custom caption.
+del_caption - delete custom caption.
+metadata - To change your metadata
+ping - To check bot ping.
+donate - To support developer.
+set_prefix - Set Your Prefix
+see_prefix - See Your Prefix
+del_prefix - Delete Your Prefix
+set_suffix - Set Your Suffix
+see_suffix - See Your Suffix
+del_suffix - Delete Your Suffix
+restart - To restart the bot [FOR ADMINS USE ONLY]
+broadcast - Message Broadcast command [FOR ADMINS USE ONLY].
+status - Check bot status [FOR ADMINS USE ONLY].
 ```
-</b>
-</details>
-
-### 📶 DEPLOYEMENT
-<details>
-<summary><b>Tap On Me For Deploy</summary>
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
-</h3>
-
-<p align="center"><a href="https://github.com/CodeXBots/Post-Search-Bot">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy On Heroku">
-</a></p>
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴋᴏʏᴇʙ 」─
-</h3>
-<p align="center"><a href="https://app.koyeb.com/deploy?type=git&repository=github.com/CodeXBots/Post-Search-Bot&branch=main&name=Post-Search-Bot">
-  <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy On Koyeb">
-</a></p>
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʀᴀɪʟᴡᴀʏ 」─
-</h3>
-<p align="center"><a href="https://railway.app/deploy?template=https://github.com/CodeXBots/Post-Search-Bot">
-     <img height="45px" src="https://railway.app/button.svg">
-</a></p>
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʀᴇɴᴅᴇʀ 」─
-</h3>
-<p align="center"><a href="https://render.com/deploy?repo=https://github.com/CodeXBots/Post-Search-Bot">
-<img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
-</a></p>
 </details>
 
 ### 🥳 CREDIT
 
 <details><summary>Tap On Me For Credit</summary>
 
+💝 [TechifyBots](https://github.com/TechifyBots)
 
-💝 Credit Goes To [CodeXBots](https://github.com/CodeXBots)
-
-💘 Base Repo Credit [CyniteOfficial](https://github.com/CyniteOfficial)
-
-💖 And Thank You So Much To All Who Help In This Journey.
+💘 [JishuDeveloper](https://github.com/JishuDeveloper)
 </details>
 
 ### 💕 CONTACT DEVELOPER
 
-- [Rahul](https://telegram.me/CodeXBro)
+- [Rahul](https://telegram.me/TechifyRahul)
 
 ### ☕ BUY ME A COFFEE
-- [PayPal](https://paypal.me/RahulReviews)
-- [UPI](https://codexbots.github.io/Donate)
+- [PayPal](https://paypal.me/TechifyBots)
+- [UPI](https://TechifyBots.github.io/Donate)
 
 ### 📌 NOTE
 
