@@ -1,5 +1,5 @@
 <h1 align="center">
- <b><a href="https://youtu.be/kuW1DwrHC1M" target="/blank">Rename Bot 2GB</a>
+ <b><a href="https://youtu.be/6BWLUL3Faxs" target="/blank">Rename Bot 2GB</a>
 </h1>
 
 <p align="center">🩷 Thanks for Being Here 🩷</p>
