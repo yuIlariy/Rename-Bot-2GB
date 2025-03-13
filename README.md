@@ -29,8 +29,8 @@
 
 <details><summary>Tap On Me For Environment Variable</summary>
 
-* `API_ID` - Your Telegram [API ID](https://youtu.be/RdMY6Lqfi9w).
-* `API_HASH` - Your Telegram [API HASH](https://youtu.be/RdMY6Lqfi9w).
+* `API_ID` - Your Telegram [API ID](https://youtu.be/y5FwAobQ-Kc).
+* `API_HASH` - Your Telegram [API HASH](https://youtu.be/y5FwAobQ-Kc).
 * `BOT_TOKEN` - Get it from [BotFather](https://youtu.be/aJILCCXfNVM).
 * `ADMIN` - Your ID
 * `DB_URL` - Enter Mongodb [database URL](https://youtu.be/pMJpHoiu1go)
