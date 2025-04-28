@@ -76,7 +76,7 @@ status - Check bot status [FOR ADMINS USE ONLY].
 
 ### 😇 [SUPPORT](https://techifybots.github.io/PayWeb)
 
-### 🥳 [CONTACT DEVELOPER](https://telegram.me/TechifySupport)
+### 🥳 [DEVELOPER](https://instagram.com/TechifyRahul)
 
 ### 📌 NOTE
 
