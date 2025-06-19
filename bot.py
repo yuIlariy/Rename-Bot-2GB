@@ -9,9 +9,7 @@ from route import web_server
 import pyrogram.utils
 import pyromod
 
-pyrogram.utils.MIN_CHAT_ID = -999999999999
-pyrogram.utils.MIN_CHANNEL_ID = -1009999999999
-
+pyrogram.utils.MIN_CHANNEL_ID = -100999999999999
 
 class Bot(Client):
 
@@ -38,11 +36,11 @@ class Bot(Client):
             PORT = int(os.environ.get("PORT", 8000))  # Use port 8000 or env PORT
             await web.TCPSite(app, "0.0.0.0", PORT).start()
         print(f"{me.first_name} Is Started.....✨️")
-        for id in Config.ADMIN:
+        if Config.ADMIN:
             try: 
-                await self.send_message(id, f"**{me.first_name} Is Started...**")                                
+                await self.send_message(Config.ADMIN, f"**{me.first_name} Is Started...**")                                
             except Exception as e:
-                print(f"Error sending message to admin {id}: {e}")
+                print(f"Error sending message to admin: {e}")
         
         if Config.LOG_CHANNEL:
             try:
