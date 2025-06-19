@@ -10,10 +10,11 @@ from helper.database import jishubotz
 from asyncio import sleep
 from PIL import Image
 from config import Config
+from .fsub import *
 import os, time, re, random, asyncio
 
 
-@Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
+@Client.on_message(filters.private & (filters.document | filters.video))
 async def rename_start(client, message):
     file = getattr(message, message.media.value)
     filename = file.file_name
@@ -22,9 +23,9 @@ async def rename_start(client, message):
         return await message.reply(
             "**ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ. ᴄᴏɴᴛᴀᴄᴛ @CallOwnerBot ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!**"
         )
+    if Config.IS_FSUB and not await get_fsub(client, message):return
     if file.file_size > 2000 * 1024 * 1024:
-        return await message.reply_text("Sorry, this bot doesn't support files larger than 2GB.")
-
+         return await message.reply_text("Sorry Bro This Bot Doesn't Support Uploading Files Bigger Than 2GB", quote=True)
     try:
         await message.reply_text(
             text=f"**Please Enter New Filename...**\n\n**Old File Name** :- `{filename}`",
@@ -65,8 +66,6 @@ async def refunc(client, message):
         button = [[InlineKeyboardButton("📁 Document", callback_data="upload_document")]]
         if file.media in [MessageMediaType.VIDEO, MessageMediaType.DOCUMENT]:
             button.append([InlineKeyboardButton("🎥 Video", callback_data="upload_video")])
-        elif file.media == MessageMediaType.AUDIO:
-            button.append([InlineKeyboardButton("🎵 Audio", callback_data="upload_audio")])
         await message.reply(
             text=f"**Select The Output File Type**\n\n**File Name :-** `{new_name}`",
             reply_to_message_id=file.id,
@@ -160,6 +159,7 @@ async def doc(bot, update):
         print(f"Error editing message: {e}")
     
     type = update.data.split("_")[1]
+    close_button = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]])
     try:
         if type == "document":
             sent_message = await bot.send_document(
@@ -168,7 +168,8 @@ async def doc(bot, update):
                 thumb=ph_path, 
                 caption=caption, 
                 progress=progress_for_pyrogram,
-                progress_args=("💠 Uploading...  ⚡", ms, time.time())
+                progress_args=("💠 Uploading...  ⚡", ms, time.time()),
+                reply_markup=close_button
             )
         elif type == "video": 
             sent_message = await bot.send_video(
@@ -178,27 +179,19 @@ async def doc(bot, update):
                 thumb=ph_path,
                 duration=duration,
                 progress=progress_for_pyrogram,
-                progress_args=("💠 Uploading...  ⚡", ms, time.time())
+                progress_args=("💠 Uploading...  ⚡", ms, time.time()),
+                reply_markup=close_button
             )
-        elif type == "audio": 
-            sent_message = await bot.send_audio(
-                update.message.chat.id,
-                audio=metadata_path if _bool_metadata else file_path,
-                caption=caption,
-                thumb=ph_path,
-                duration=duration,
-                progress=progress_for_pyrogram,
-                progress_args=("💠 Uploading...  ⚡", ms, time.time())
-            )
-
-        forwarded_message = await bot.forward_messages(
-            Config.BIN_CHANNEL, 
-            update.message.chat.id, 
-            sent_message.id
-        )
 
         deletion_msg = await sent_message.reply(
             text="**🗑 This file will auto-delete in 30 minutes. Save it now!**",
+        )
+        
+        bin = await bot.copy_message(
+            chat_id=Config.BIN_CHANNEL,
+            from_chat_id=update.message.chat.id,
+            message_id=sent_message.id,
+            reply_markup=close_button
         )
 
     except Exception as e:          
@@ -216,7 +209,7 @@ async def doc(bot, update):
     await asyncio.sleep(1800)
     try:
         await sent_message.delete()
-        await forwarded_message.delete()
+        await bin.delete()
         await deletion_msg.delete()
     except Exception as e:
         print(f"Error deleting messages after 30 minutes: {e}")
