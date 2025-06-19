@@ -33,8 +33,8 @@
 * `API_HASH` - Your Telegram [API HASH](https://youtu.be/y5FwAobQ-Kc).
 * `BOT_TOKEN` - Get it from [BotFather](https://youtu.be/aJILCCXfNVM).
 * `ADMIN` - Your ID
-* `DB_URL` - Enter Mongodb [database URL](https://youtu.be/j8LIuM7vv18)
-* `FORCE_SUB` - Force subscribe channel username without `@`
+* `DATABASE_URL` - Enter Mongodb [database URL](https://youtu.be/j8LIuM7vv18)
+* `AUTH_CHANNELS` - Your Fsub channel IDs.
 * `LOG_CHANNEL` - Log Channel ID.
 * `DB_NAME`  - Your database name from mongoDB.
 * `START_PIC` - Start message photo.
