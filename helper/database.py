@@ -12,7 +12,7 @@ class Database:
 
     def new_user(self, id):
         return dict(
-            _id=int(id),                                   
+            _id=int(id),
             file_id=None,
             caption=None,
             prefix=None,
@@ -96,7 +96,7 @@ class Database:
     async def get_metadata_code(self, id):
         user = await self.col.find_one({'_id': int(id)})
         return user.get('metadata_code', None)
-
+ 
     #======================= Ban User ========================#
 
     async def ban_user(self, user_id):
@@ -123,5 +123,4 @@ class Database:
             print(e)
             return e
 
-# Create a Database instance
-jishubotz = Database(Config.DB_URL, Config.DB_NAME)
+jishubotz = Database(Config.DATABASE_URL, Config.DATABASE_NAME)
