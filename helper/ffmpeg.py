@@ -18,24 +18,24 @@ async def fix_thumb(thumb):
                 width = metadata.get("width")
             if metadata.has("height"):
                 height = metadata.get("height")
-                
+
             # Open the image file
             with Image.open(thumb) as img:
                 # Convert the image to RGB format and save it back to the same file
                 img.convert("RGB").save(thumb)
-            
+
                 # Resize the image
                 resized_img = img.resize((width, height))
-                
+
                 # Save the resized image in JPEG format
                 resized_img.save(thumb, "JPEG")
             parser.close()
     except Exception as e:
         print(e)
         thumb = None 
-       
+
     return width, height, thumb
-    
+
 async def take_screen_shot(video_file, output_directory, ttl):
     out_put_file_name = f"{output_directory}/{time.time()}.jpg"
     file_genertor_command = [
@@ -59,8 +59,8 @@ async def take_screen_shot(video_file, output_directory, ttl):
     if os.path.lexists(out_put_file_name):
         return out_put_file_name
     return None
-    
-    
+
+
 async def add_metadata(input_path, output_path, metadata, ms):
     try:
         await ms.edit("<i>I Found Metadata, Adding Into Your File ⚡</i>")
@@ -74,7 +74,7 @@ async def add_metadata(input_path, output_path, metadata, ms):
             '-metadata', f'artist={metadata}',  # Set Artist Metadata
             output_path
         ]
-        
+
         process = await asyncio.create_subprocess_exec(
             *command,
             stdout=asyncio.subprocess.PIPE,
@@ -86,7 +86,7 @@ async def add_metadata(input_path, output_path, metadata, ms):
         print(e_response)
         print(t_response)
 
-        
+
         if os.path.exists(output_path):
             await ms.edit("<i>Metadata Has Been Successfully Added To Your File ✅</i>")
             return output_path
@@ -94,16 +94,6 @@ async def add_metadata(input_path, output_path, metadata, ms):
             await ms.edit("<i>Failed To Add Metadata To Your File ❌</i>")
             return None
     except Exception as e:
-        print(f"Error occurred while adding metadata: {str(e)}")
+        print(f"Error Occurred While Adding Metadata : {str(e)}")
         await ms.edit("<i>An Error Occurred While Adding Metadata To Your File ❌</i>")
         return None
-
-
-
-
-
-
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @JishuBotz & @Madflix_Bots
-# Developer @JishuDeveloper
