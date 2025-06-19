@@ -62,9 +62,11 @@ del_prefix - Delete Your Prefix
 set_suffix - Set Your Suffix
 see_suffix - See Your Suffix
 del_suffix - Delete Your Suffix
-restart - To restart the bot [FOR ADMINS USE ONLY]
-broadcast - Message Broadcast command [FOR ADMINS USE ONLY].
-status - Check bot status [FOR ADMINS USE ONLY].
+ban - To ban a user
+unban - To unban a banned user
+restart - To restart the bot
+broadcast - Message Broadcast command.
+status - Check bot status
 ```
 </details>
 
