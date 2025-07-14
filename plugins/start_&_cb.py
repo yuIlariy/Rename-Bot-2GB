@@ -13,9 +13,9 @@ async def start(client, message):
         return
 
     button = InlineKeyboardMarkup([
-        [InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about'),
-         InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help')],
-        [InlineKeyboardButton('♻ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♻', user_id=int(Config.ADMIN))]
+        [InlineKeyboardButton('ℹ️ 𝖠𝖻𝗈𝗎𝗍', callback_data='about'),
+         InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', callback_data='help')],
+        [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(Config.ADMIN))]
     ])
 
     if Config.START_PIC:
@@ -40,9 +40,9 @@ async def cb_handler(client, query: CallbackQuery):
             text=Txt.START_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup = InlineKeyboardMarkup([
-                [InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about'),
-                InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help')],
-                [InlineKeyboardButton('♻ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♻', user_id=int(Config.ADMIN))]
+                [InlineKeyboardButton('ℹ️ 𝖠𝖻𝗈𝗎𝗍', callback_data='about'),
+                InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', callback_data='help')],
+                [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(Config.ADMIN))]
             ])
         )
     elif data == "help":
