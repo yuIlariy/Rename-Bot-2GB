@@ -13,6 +13,9 @@ from config import Config
 from .fsub import *
 import os, time, re, random, asyncio
 
+def clean_filename(name):
+    name = name.strip()
+    return re.sub(r'[\\/*?:"<>|]', "_", name)  # replaces Windows/UNIX illegal chars
 
 @Client.on_message(filters.private & (filters.document | filters.video))
 async def rename_start(client, message):
@@ -55,14 +58,13 @@ async def refunc(client, message):
         msg = await client.get_messages(message.chat.id, reply_message.id)
         file = msg.reply_to_message
         media = getattr(file, file.media.value)
-        if not "." in new_name:
-            if "." in media.file_name:
+        if "." not in new_name:
+            if media.file_name and "." in media.file_name:
                 extn = media.file_name.rsplit('.', 1)[-1]
             else:
                 extn = "mkv"
             new_name = new_name + "." + extn
         await reply_message.delete()
-
         button = [[InlineKeyboardButton("📁 Document", callback_data="upload_document")]]
         if file.media in [MessageMediaType.VIDEO, MessageMediaType.DOCUMENT]:
             button.append([InlineKeyboardButton("🎥 Video", callback_data="upload_video")])
@@ -80,7 +82,7 @@ async def doc(bot, update):
     prefix = await jishubotz.get_prefix(update.message.chat.id)
     suffix = await jishubotz.get_suffix(update.message.chat.id)
     new_name = update.message.text
-    new_filename_ = new_name.split(":-")[1]
+    new_filename_ = clean_filename(new_name.split(":-")[1])
 
     try:
         new_filename = add_prefix_suffix(new_filename_, prefix, suffix)
