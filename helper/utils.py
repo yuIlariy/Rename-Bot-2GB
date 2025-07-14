@@ -71,16 +71,18 @@ def convert(seconds):
 
 async def send_log(b, u):
     if Config.LOG_CHANNEL is not None:
-        curr = datetime.now(timezone("Asia/Kolkata"))
-        date = curr.strftime('%d %B, %Y')
-        time = curr.strftime('%I:%M:%S %p')
+        bot_user = await b.get_me()
         await b.send_message(
             Config.LOG_CHANNEL,
-            f"<b><u>New User Started The Bot :</u></b> \n\n<b>User Mention</b> : {u.mention}\n<b>User ID</b> : `{u.id}`\n<b>First Name</b> : {u.first_name} \n<b>Last Name</b> : {u.last_name} \n<b>User Name</b> : @{u.username} \n<b>User Link</b> : <a href='tg://openmessage?user_id={u.id}'>Click Here</a>\n\n<b>Date</b> : {date}\n<b>Time</b> : {time}"
+            f"<b><u>New User Started The Bot :</u></b> \n\n"
+            f"<b>User Mention</b> : {u.mention}\n"
+            f"<b>User ID</b> : `{u.id}`\n"
+            f"<b>First Name</b> : {u.first_name}\n"
+            f"<b>Last Name</b> : {u.last_name}\n"
+            f"<b>User Name</b> : @{u.username}\n"
+            f"<b>User Link</b> : <a href='tg://openmessage?user_id={u.id}'>Click Here</a>\n\n"
+            f"<b>By</b> : @{bot_user.username}"
         )
-
-
-
 
 def add_prefix_suffix(input_string, prefix='', suffix=''):
     pattern = r'(?P<filename>.*?)(\.\w+)?$'
