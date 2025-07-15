@@ -28,7 +28,7 @@ async def rename_start(client, message):
         )
     if Config.IS_FSUB and not await get_fsub(client, message):return
     if file.file_size > 2000 * 1024 * 1024:
-         return await message.reply_text("Sorry Bro This Bot Doesn't Support Uploading Files Bigger Than 2GB", quote=True)
+         return await message.reply_text("Sorry This Bot Doesn't Support Uploading Files Bigger Than 2GB use @digitalfilesrenamebot 🚀", quote=True)
     try:
         await message.reply_text(
             text=f"**Please Enter New Filename...**\n\n**Old File Name** :- `{filename}`",
